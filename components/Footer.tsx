@@ -5,17 +5,18 @@ export default function Footer() {
     <footer className="border-t border-slate-200 bg-white">
       <div className="max-w-6xl mx-auto px-6 py-12 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
         <div>
-          <p className="text-lg font-semibold text-slate-900">Stark Deals</p>
+          <p className="text-lg font-semibold text-slate-900">Stark</p>
           <p className="mt-1 text-sm text-slate-500 max-w-xs">
-            Connecting capital with opportunity. Commission-based placement and
-            deal brokering.
+            U.S. market entry, soft landing and local business development
+            for German and European companies. A STARK Advisory LLC practice,
+            based in Los Angeles.
           </p>
         </div>
 
         <nav className="flex flex-col sm:flex-row gap-4 sm:gap-8">
           {[
             ["Services", "/services"],
-            ["Portfolio", "/portfolio"],
+            ["Who We Help", "/portfolio"],
             ["About", "/about"],
             ["Contact", "/contact"],
           ].map(([label, href]) => (
@@ -33,10 +34,10 @@ export default function Footer() {
       <div className="border-t border-slate-100">
         <div className="max-w-6xl mx-auto px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-2">
           <p className="text-xs text-slate-400">
-            &copy; {new Date().getFullYear()} Stark Deals. All rights reserved.
+            &copy; {new Date().getFullYear()} STARK Advisory LLC. All rights reserved.
           </p>
           <p className="text-xs text-slate-400">
-            This website does not constitute financial advice.
+            Advisory services only — not a broker-dealer or placement agent, and not legal, tax or investment advice.
           </p>
         </div>
       </div>

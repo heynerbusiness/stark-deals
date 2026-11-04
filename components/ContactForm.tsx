@@ -18,7 +18,7 @@ export default function ContactForm() {
       name: (form.elements.namedItem("name") as HTMLInputElement).value,
       email: (form.elements.namedItem("email") as HTMLInputElement).value,
       phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
-      dealType: (form.elements.namedItem("dealType") as HTMLSelectElement).value,
+      enquiryType: (form.elements.namedItem("enquiryType") as HTMLSelectElement).value,
       message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
     };
 
@@ -47,7 +47,7 @@ export default function ContactForm() {
       <div className="border border-green-200 bg-green-50 rounded-2xl p-10 text-center">
         <p className="text-2xl font-semibold text-slate-900">Message Sent</p>
         <p className="mt-2 text-slate-500">
-          Thank you for reaching out. We&apos;ll be in touch shortly.
+          Thank you for reaching out. We&apos;ll be in touch within one business day.
         </p>
       </div>
     );
@@ -98,22 +98,23 @@ export default function ContactForm() {
           />
         </div>
         <div>
-          <label htmlFor="dealType" className="block text-sm font-medium text-slate-700 mb-1.5">
-            Deal Type <span className="text-red-400">*</span>
+          <label htmlFor="enquiryType" className="block text-sm font-medium text-slate-700 mb-1.5">
+            I’m interested in <span className="text-red-400">*</span>
           </label>
           <select
-            id="dealType"
-            name="dealType"
+            id="enquiryType"
+            name="enquiryType"
             required
             className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition bg-white"
           >
             <option value="" disabled selected>
-              Select a type
+              Select an option
             </option>
-            <option value="Capital Raise (Equity)">Capital Raise (Equity)</option>
-            <option value="Debt / Loan Financing">Debt / Loan Financing</option>
-            <option value="M&A Introduction">M&A Introduction</option>
-            <option value="Investor Looking to Deploy">Investor Looking to Deploy</option>
+            <option value="Market Entry Readiness Call">Market Entry Readiness Call</option>
+            <option value="Validation Sprint">Validation Sprint</option>
+            <option value="Soft Landing / Business Hub">Soft Landing / Business Hub</option>
+            <option value="Visit / Trade Mission">Visit / Trade Mission</option>
+            <option value="Service Partner Enquiry">I’m a U.S. service partner</option>
             <option value="Other">Other</option>
           </select>
         </div>
@@ -128,7 +129,7 @@ export default function ContactForm() {
           name="message"
           required
           rows={5}
-          placeholder="Briefly describe your deal, funding need, or investment criteria..."
+          placeholder="Where are you based, what does your company do, and where are you in your U.S. plans? (stage, timeline, what you need on the ground)"
           className="w-full rounded-xl border border-slate-200 px-4 py-3 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition resize-none"
         />
       </div>

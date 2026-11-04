@@ -7,7 +7,7 @@ import { useState } from "react";
 const links = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
-  { href: "/portfolio", label: "Portfolio" },
+  { href: "/portfolio", label: "Who We Help" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
@@ -23,7 +23,7 @@ export default function Navbar() {
           href="/"
           className="text-xl font-semibold tracking-tight text-slate-900"
         >
-          Stark Deals
+          Stark
         </Link>
 
         {/* Desktop nav */}

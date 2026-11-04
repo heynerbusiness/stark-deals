@@ -9,23 +9,24 @@ export async function POST(request: Request) {
   const resend = new Resend(process.env.RESEND_API_KEY);
   const body = await request.json().catch(() => null);
 
-  if (!body || !body.name || !body.email || !body.message || !body.dealType) {
+  if (!body || !body.name || !body.email || !body.message || !body.enquiryType && !body.dealType) {
     return NextResponse.json({ error: "Missing required fields." }, { status: 400 });
   }
 
-  const { name, email, phone, dealType, message } = body;
+  const { name, email, phone, message } = body;
+  const enquiryType = body.enquiryType || body.dealType;
 
   try {
     await resend.emails.send({
-      from: "Stark Deals Contact <onboarding@resend.dev>",
-      to: ["lenniheyner@gmail.com"],
+      from: "Stark Contact <onboarding@resend.dev>",
+      to: ["lennart@heyner.business"],
       replyTo: email,
-      subject: `New Enquiry: ${dealType} — ${name}`,
+      subject: `New Enquiry: ${enquiryType} — ${name}`,
       text: `
 Name: ${name}
 Email: ${email}
 Phone: ${phone || "Not provided"}
-Deal Type: ${dealType}
+Enquiry Type: ${enquiryType}
 
 Message:
 ${message}

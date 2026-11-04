@@ -10,9 +10,9 @@ const geist = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "Stark Deals — Placement Agent",
+  title: "Stark — U.S. Market Entry for German & European Companies",
   description:
-    "Stark Deals connects capital providers with startups and individuals seeking financing. Commission-based deal brokering and placement services.",
+    "Stark (STARK Advisory LLC) helps German and European companies land and expand in the United States: market-entry advisory, soft landing and local business development in Southern California. Fixed-fee advisory — no placement, no commissions.",
 };
 
 export default function RootLayout({
